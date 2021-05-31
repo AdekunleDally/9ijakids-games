@@ -3,34 +3,39 @@ import React, {Component} from 'react'
 import './App.css'
 //import BookShelf from './components/bookshelf/bookshelf.component';
 //import SearchButton from './components/search-button.component' ;
-import {Switch, Route} from 'react-router-dom';
-import HomePage from './pages/homepage.component';
-import SearchPage from './pages/searchpage.component';
-import Provider, {IndexContext} from './provider/index';
+//import {Switch, Route} from 'react-router-dom';
+import GAMES_DATA from './games.data'; 
+
+class App extends Component {
+  constructor(){
+    super();
+
+    this.state={
+     Games: GAMES_DATA
+    }
+  }
 
 
-class BooksApp extends Component {
+
   render() {
+    const {Games} =this.state;
     return (
       <div className="app">
-       <Provider>
-           <Switch>
-             <Route exact path="/" render={()=> (
-                        <IndexContext.Consumer> 
-                          {context => <HomePage { ...context} />} 
-                        </IndexContext.Consumer>
-                        )} />
+         <div className="naijakids-title" >
+           <h1>9ija Kids Games</h1>
+         </div>
 
-             <Route exact path='/searchpage' render={()=> (
-              <IndexContext.Consumer> 
-                {context => <SearchPage { ...context} />} 
-              </IndexContext.Consumer>
-              )} />
-           </Switch>
-       </Provider> 
+        <div>
+        {
+          Games.map((Game)=>(
+            <h1>{Game.GameTitle}</h1>
+          ))
+        }
+        </div>
+
       </div>
     )
   }
 }
 
-export default BooksApp
+export default App

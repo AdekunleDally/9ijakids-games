@@ -4,11 +4,11 @@ import {update} from '../../BooksAPI';
 class Book extends Component{
 handleChange = async e =>{
   try{
-    const BookShelf= e.target.value;
+    const shelf= e.target.value;
     const book= this.props;
-    const result= await update(book, BookShelf);
-    //sssconsole.log(result);
-    this.props.moveBook(book, BookShelf, result);
+    const result= await update(book, shelf);
+    //console.log(result);
+    this.props.moveBook(book, shelf, result);
   }catch(e){
     console.log(e)
   }
@@ -23,7 +23,7 @@ handleChange = async e =>{
         style={{
           width: 128, 
           height: 193, 
-          backgroundImage: `url(${this.props.imageLinks.thumbnail})` 
+          backgroundImage: `url(${this.props.imageLinks? this.props.imageLinks.thumbnail : "" })` 
         }}
          />
         <div className="book-shelf-changer">
@@ -37,7 +37,7 @@ handleChange = async e =>{
         </div>
       </div>
       <div className="book-title"> {this.props.title}</div>
-      <div className="book-authors">{this.props.authors[0]}</div>
+      <div className="book-authors">{this.props.authors? this.props.authors[0] : "Does not have an Author"}</div>
     </div>
   </li>
   )
