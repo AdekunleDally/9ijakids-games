@@ -12,6 +12,12 @@ body, .app {
 
 /* main page */
 
+.app{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 .naijakids-title {
   padding: 10px 0;
   background: #2e7c31;

@@ -11,11 +11,16 @@ class App extends Component {
     super();
 
     this.state={
-     Games: GAMES_DATA
+     Games: GAMES_DATA,
+     searchField=" "
     }
   }
 
-
+  componentDidMount(){
+    fetch('http://jsonplaceholder.typicode.com/users')
+    .then(response=>response.json())
+    .then(users=> console.log(users))
+  }
 
   render() {
     const {Games} =this.state;
@@ -28,7 +33,7 @@ class App extends Component {
         <div>
         {
           Games.map((Game)=>(
-            <h1>{Game.GameTitle}</h1>
+            <h1 key={Game.id}>{Game.GameTitle}</h1>
           ))
         }
         </div>
