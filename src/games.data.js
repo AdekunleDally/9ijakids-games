@@ -7,7 +7,7 @@ const GAMES_DATA = [
     "Level": "Key Stage 1",
     "Subject": "English",
     "GameImage": "https://partners.9ijakids.com/index.php/thumbnail?game=Before and After",
-    "id" : 1
+    "id" :"Before and After"
     },
     {
     "GameTitle": "Communication",
@@ -17,7 +17,7 @@ const GAMES_DATA = [
     "Level": "Key Stage 1",
     "Subject": "Social Studies",
     "GameImage": "https://partners.9ijakids.com/index.php/thumbnail?game=Communication",
-    "id" :2
+    "id" :"Communication"
     },
     {
     "GameTitle": "Kiddiepreneur 101",
@@ -27,7 +27,7 @@ const GAMES_DATA = [
     "Level": "Financial Literacy",
     "Subject": "Financial Literacy",
     "GameImage": "https://partners.9ijakids.com/index.php/thumbnail?game=Kiddiepreneur 101",
-    "id" : 3
+    "id" : "Kiddiepreneur 101"
     },
     {
     "GameTitle": "Money Matters",
@@ -37,7 +37,7 @@ const GAMES_DATA = [
     "Level": "Financial Literacy",
     "Subject": "Financial Literacy",
     "GameImage": "https://partners.9ijakids.com/index.php/thumbnail?game=Money Matters",
-    "id" : 4
+    "id" : "Money Matters"
     },
     {
     "GameTitle": "Maths Pop",
@@ -47,7 +47,7 @@ const GAMES_DATA = [
     "Level": "Key Stage 1",
     "Subject": "Mathematics",
     "GameImage": "https://partners.9ijakids.com/index.php/thumbnail?game=Maths Pop",
-    "id" : 5
+    "id" : "Maths Pop"
     },
     {
     "GameTitle": "Exploring Life",
@@ -57,7 +57,7 @@ const GAMES_DATA = [
     "Level": "Key Stage 1",
     "Subject": "Science",
     "GameImage": "https://partners.9ijakids.com/index.php/thumbnail?game=Exploring Life",
-    "id" : 6
+    "id" : "Exploring Life"
     },
     {
     "GameTitle": "Mathsmania City - Decimals",
@@ -67,7 +67,7 @@ const GAMES_DATA = [
     "Level": "Key Stage 2",
     "Subject": "Mathematics",
     "GameImage": "https://partners.9ijakids.com/index.php/thumbnail?game=Mathsmania City - Decimals",
-    "id" : 7
+    "id" : "Mathsmania City - Decimals"
     }
 ]
 

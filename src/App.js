@@ -1,9 +1,6 @@
 import React, {Component} from 'react'
-// import * as BooksAPI from './BooksAPI'
 import './App.css'
-//import BookShelf from './components/bookshelf/bookshelf.component';
-//import SearchButton from './components/search-button.component' ;
-//import {Switch, Route} from 'react-router-dom';
+import CardList from './components/card-list/cardlist.component'
 import GAMES_DATA from './games.data'; 
 
 class App extends Component {
@@ -11,33 +8,31 @@ class App extends Component {
     super();
 
     this.state={
-     Games: GAMES_DATA,
-     searchField=" "
+     games: GAMES_DATA,
+     searchTerm:""
     }
+
+
+
+  // componentDidMount(){
+  //   fetch('http://jsonplaceholder.typicode.com/users')
+  //   .then(response=>response.json())
+  //   .then(users=> console.log(users))
+  // }
+
+  }
+  handleChange=e=>{
+    //console.log(e.target.value)
+    this.setState({searchTerm:e.target.value})
   }
 
-  componentDidMount(){
-    fetch('http://jsonplaceholder.typicode.com/users')
-    .then(response=>response.json())
-    .then(users=> console.log(users))
-  }
-
-  render() {
-    const {Games} =this.state;
+  render(){
+    const {games, searchTerm} =this.state;
+    const filteredGamesByTopic= games.filter(game=>game.Topic.toLowerCase().includes(searchTerm.toLowerCase()))
     return (
       <div className="app">
-         <div className="naijakids-title" >
-           <h1>9ija Kids Games</h1>
-         </div>
-
-        <div>
-        {
-          Games.map((Game)=>(
-            <h1 key={Game.id}>{Game.GameTitle}</h1>
-          ))
-        }
-        </div>
-
+         <input type='search' placeholder= 'searchTerm' onChange={this.handleChange} className="input" />
+         <CardList games={filteredGamesByTopic} />
       </div>
     )
   }
