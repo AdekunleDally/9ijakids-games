@@ -7,4 +7,4 @@ Use the command **npm install** to install packages needed for the app to run it
 ## Start Project
 Use **npm start** to start the project
 
-an id  property was added to the json in order to uniquely identify each child in the array
+React Hooks was used to implement the search filter as well as the filter functionality

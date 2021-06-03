@@ -2,9 +2,8 @@ import React from 'react';
 import './button.styles.scss';
 
 function Button({ button, levelButtons, filterGroup, filterLevel}){
-  //console.log(filterLevel)
   return (
-      <div className="button">
+    <div className="button">
       {
         button.map((grp, i)=>(
           <button type="button" key={i} className="btn" onClick={()=> filterGroup(grp)}>{grp}</button>
@@ -15,9 +14,8 @@ function Button({ button, levelButtons, filterGroup, filterLevel}){
         levelButtons.map((lvl, j)=>(
           <button type="button" key={j} className="btn" onClick={()=> filterLevel(lvl)}>{lvl}</button>
         ))
-      } 
-      
-   </div>
+      }   
+    </div>
   )
 }
 
