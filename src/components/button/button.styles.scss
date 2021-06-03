@@ -1,13 +1,15 @@
-// .button{
-//     padding: 2rem;
-//     border-radius: 50px;
-// }
+.button{
+    width: 75%;
+    margin: 2.5rem auto;
+    text-align: center;
+}
 
-// .btn{
-//     padding: 6px;
-//     margin: 5px;
-//     border-radius: 5px;
-//     background-color: rgba(0, 0, 0, 0.534);
-//     color: white;
-//     cursor: pointer;
-// }
+.btn{
+    padding: 1rem 2rem;
+    margin: 5px;
+    border-radius: 30px;
+    background-color: rgb(68, 68, 107);
+    color: white;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
