@@ -1,41 +1,47 @@
-import React, {Component} from 'react'
-import './App.css'
-import CardList from './components/card-list/cardlist.component'
-import GAMES_DATA from './games.data'; 
+import {useState} from 'react';
+import components from './games.data'; 
+import CardList from './components/card-list/cardlist'
+import Button from './components/button/button';
+//import Search from './components/search/search.component';
+import './App.css';
 
-class App extends Component {
-  constructor(){
-    super();
+const allGroups = ['All', ...components.map(component=>component.Group)]
 
-    this.state={
-     games: GAMES_DATA,
-     searchTerm:""
+//console.log(allGroups);
+
+function App(){
+  const[ games, setGames ] = useState(components);
+ //const [searchTerm, setSearchTerm] =useState();
+ const [buttons, setButtons] =useState([allGroups]);
+
+ 
+    // const searchFilter=(userInput)=>{
+    // const filteredGamesByTopic= games.filter(game=>game.Topic.toLowerCase().includes(searchTerm.toLowerCase()));
+    // setSearchTerm(filteredGamesByTopic)
+    // }
+    
+    const filter=(button)=>{
+      const filteredGroupData = components.filter(component=>component.Group===button);
+      setGames(filteredGroupData)
     }
-
-
-
-  // componentDidMount(){
-  //   fetch('http://jsonplaceholder.typicode.com/users')
-  //   .then(response=>response.json())
-  //   .then(users=> console.log(users))
-  // }
-
-  }
-  handleChange=e=>{
-    //console.log(e.target.value)
-    this.setState({searchTerm:e.target.value})
-  }
-
-  render(){
-    const {games, searchTerm} =this.state;
-    const filteredGamesByTopic= games.filter(game=>game.Topic.toLowerCase().includes(searchTerm.toLowerCase()))
     return (
       <div className="app">
-         <input type='search' placeholder= 'searchTerm' onChange={this.handleChange} className="input" />
-         <CardList games={filteredGamesByTopic} />
+         <div>
+           <h1>9ijakids Game List</h1>
+         </div>
+         <Button button={buttons} filter={filter}/>
+         <CardList games={games} />
       </div>
     )
-  }
 }
 
 export default App
+
+
+
+
+
+
+
+
+

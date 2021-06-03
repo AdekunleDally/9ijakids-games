@@ -1,4 +1,4 @@
-const GAMES_DATA = [
+const components = [
     {
     "GameTitle": "Before and After",
     "GameDescription": "Before and After Yr 2 (prefix and suffix)",
@@ -71,4 +71,4 @@ const GAMES_DATA = [
     }
 ]
 
-export default GAMES_DATA;
+export default components;

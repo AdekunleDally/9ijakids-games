@@ -1,12 +1,12 @@
 import React from 'react';
 import './cardlist.styles.scss';
-import Card from '../card/card.component';
+import Card from '../card/card';
 
-const CardList =props=>{
+function CardList({games}){
     return (
         <div className="cardlist">
         {
-            props.games.map(game=>(
+            games.map(game=>(
               <Card key={game.id} game={game} />
           ))
         }
